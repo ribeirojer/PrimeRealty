@@ -3,7 +3,7 @@ import Link from "next/link";
 
 type Props = {
 	fecharMenu: () => void;
-	user: any | null | undefined;
+	user: { name: string } | null | undefined;
 };
 
 export default function MenuMobile({ fecharMenu, user }: Props) {

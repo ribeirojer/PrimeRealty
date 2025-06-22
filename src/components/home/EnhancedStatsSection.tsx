@@ -19,8 +19,8 @@ export default function EnhancedStatsSection() {
 						{ number: "18", label: "Anos de Experiência", icon: "📅" },
 						{ number: "99.2%", label: "Satisfação do Cliente", icon: "⭐" },
 						{ number: "67", label: "Corretores Especialistas", icon: "👥" },
-					].map((stat, index) => (
-						<div key={index} className="group">
+					].map((stat) => (
+						<div key={stat.label} className="group">
 							<div className="text-4xl mb-2">{stat.icon}</div>
 							<div className="text-4xl md:text-5xl font-bold mb-2 group-hover:scale-110 transition-transform duration-200">
 								{stat.number}

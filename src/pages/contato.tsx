@@ -93,17 +93,17 @@ export default function ContatoPage() {
 				<section className="py-16 bg-white">
 					<div className="container mx-auto px-4 lg:px-6">
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-							{contactInfo.map((info, index) => (
+							{contactInfo.map((info) => (
 								<Card
-									key={index}
+									key={info.title}
 									className="text-center p-6 hover:shadow-lg transition-shadow"
 								>
 									<CardContent className="pt-6">
 										<info.icon className="h-12 w-12 text-blue-600 mx-auto mb-4" />
 										<h3 className="text-xl font-semibold mb-3">{info.title}</h3>
 										<div className="space-y-1 mb-3">
-											{info.details.map((detail, idx) => (
-												<p key={idx} className="text-gray-900 font-medium">
+											{info.details.map((detail) => (
+												<p key={detail} className="text-gray-900 font-medium">
 													{detail}
 												</p>
 											))}
@@ -246,9 +246,9 @@ export default function ContatoPage() {
 						</div>
 
 						<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-							{departments.map((dept, index) => (
+							{departments.map((dept) => (
 								<Card
-									key={index}
+									key={dept.name}
 									className="p-6 hover:shadow-lg transition-shadow"
 								>
 									<CardContent className="pt-6">
@@ -326,8 +326,8 @@ export default function ContatoPage() {
 									answer:
 										"Nossa comissão é competitiva e varia conforme o valor e tipo do imóvel. Entre em contato para uma proposta personalizada.",
 								},
-							].map((faq, index) => (
-								<Card key={index} className="p-6">
+							].map((faq) => (
+								<Card key={faq.question} className="p-6">
 									<CardContent className="p-0">
 										<h3 className="text-lg font-semibold mb-3">
 											{faq.question}

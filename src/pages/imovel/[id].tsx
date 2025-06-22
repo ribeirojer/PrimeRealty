@@ -168,11 +168,11 @@ export default function ImovelDetalhes() {
 								</div>
 							</div>
 							<div className="grid grid-cols-2 lg:grid-cols-1 gap-4">
-								{property.images.slice(1, 4).map((image, index) => (
+								{property.images.slice(1, 4).map((image) => (
 									<Image
-										key={index}
+										key={image}
 										src={image || "/placeholder.svg"}
-										alt={`Imagem ${index + 2}`}
+										alt={`Imagem ${image + 2}`}
 										width={400}
 										height={150}
 										className="w-full h-32 lg:h-40 object-cover rounded-lg"
@@ -224,9 +224,9 @@ export default function ImovelDetalhes() {
 									</CardHeader>
 									<CardContent>
 										<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-											{property.amenities.map((amenity, index) => (
+											{property.amenities.map((amenity) => (
 												<div
-													key={index}
+													key={amenity.name}
 													className="flex items-center space-x-3"
 												>
 													<amenity.icon className="h-5 w-5 text-blue-600" />
@@ -258,8 +258,11 @@ export default function ImovelDetalhes() {
 													{property.agent.name}
 												</h3>
 												<div className="flex text-yellow-400">
-													{[...Array(5)].map((_, i) => (
-														<Star key={i} className="h-4 w-4 fill-current" />
+													{[...Array(5)].map((_) => (
+														<Star
+															key={property.agent.name}
+															className="h-4 w-4 fill-current"
+														/>
 													))}
 												</div>
 											</div>

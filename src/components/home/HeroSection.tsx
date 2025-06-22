@@ -1,4 +1,5 @@
 import { MapPin, Search } from "lucide-react";
+import { useId } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -35,12 +36,18 @@ export function HeroSection() {
 					<Card className="bg-white/95 backdrop-blur-sm text-gray-900 p-8 shadow-2xl border-0 rounded-2xl">
 						<div className="grid grid-cols-1 md:grid-cols-5 gap-6">
 							<div className="space-y-2">
-								<label className="text-sm font-semibold text-gray-700 uppercase tracking-wide">
+								<label
+									htmlFor="location"
+									className="text-sm font-semibold text-gray-700 uppercase tracking-wide"
+								>
 									Localização
 								</label>
 								<div className="relative">
 									<MapPin className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
 									<Input
+										type="text"
+										name="location"
+										id={useId()}
 										placeholder="Cidade, Estado, CEP"
 										className="pl-11 h-12 border-2 border-gray-200 focus:border-blue-500 rounded-lg"
 									/>
@@ -48,7 +55,10 @@ export function HeroSection() {
 							</div>
 
 							<div className="space-y-2">
-								<label className="text-sm font-semibold text-gray-700 uppercase tracking-wide">
+								<label
+									htmlFor="propertyType"
+									className="text-sm font-semibold text-gray-700 uppercase tracking-wide"
+								>
 									Tipo de Imóvel
 								</label>
 								<Select value="house" onChange={() => {}}>
@@ -66,7 +76,10 @@ export function HeroSection() {
 							</div>
 
 							<div className="space-y-2">
-								<label className="text-sm font-semibold text-gray-700 uppercase tracking-wide">
+								<label
+									htmlFor="priceRange"
+									className="text-sm font-semibold text-gray-700 uppercase tracking-wide"
+								>
 									Faixa de Preço
 								</label>
 								<Select value="0-200k" onChange={() => {}}>
@@ -89,7 +102,10 @@ export function HeroSection() {
 							</div>
 
 							<div className="space-y-2">
-								<label className="text-sm font-semibold text-gray-700 uppercase tracking-wide">
+								<label
+									htmlFor="bedrooms"
+									className="text-sm font-semibold text-gray-700 uppercase tracking-wide"
+								>
 									Quartos
 								</label>
 								<Select value="any" onChange={() => {}}>

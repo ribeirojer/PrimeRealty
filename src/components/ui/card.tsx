@@ -14,17 +14,17 @@ export function Card({ children, className }: CardProps) {
 }
 
 export function CardHeader({ children, className }: CardProps) {
-	return <div className="p-4 border-b">{children}</div>;
+	return <div className={`${className} p-4 border-b`}>{children}</div>;
 }
 
 export function CardTitle({ children, className }: CardProps) {
-	return <h2 className="text-lg font-semibold">{children}</h2>;
+	return <h2 className={`${className} text-lg font-semibold`}>{children}</h2>;
 }
 
 export function CardDescription({ children, className }: CardProps) {
-	return <p className="text-sm text-gray-500">{children}</p>;
+	return <p className={`${className} text-sm text-gray-500`}>{children}</p>;
 }
 
 export function CardContent({ children, className }: CardProps) {
-	return <div className="p-4">{children}</div>;
+	return <div className={`${className} p-4`}>{children}</div>;
 }

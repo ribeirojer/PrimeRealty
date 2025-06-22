@@ -5,7 +5,9 @@ import type {
 } from "@/schemas/propertySchemas";
 
 export const propertyRepository = {
-	async list(filters: any) {
+	async list(
+		filters: { status?: string; type?: string; location?: string } = {},
+	) {
 		let query = supabase.from("properties").select("*");
 
 		if (filters.status) query = query.eq("status", filters.status);
@@ -60,7 +62,14 @@ export const propertyRepository = {
 		return supabase.from("properties").select("*").eq("agent_id", agentId);
 	},
 
-	async search(filters: any) {
+	async search(
+		filters: {
+			min_price?: number;
+			max_price?: number;
+			location?: string;
+			type?: string;
+		} = {},
+	) {
 		let query = supabase.from("properties").select("*");
 
 		if (filters.min_price) query = query.gte("price", filters.min_price);

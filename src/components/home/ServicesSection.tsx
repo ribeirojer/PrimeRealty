@@ -3,6 +3,33 @@ import type React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 
 export const ServicesSection: React.FC = () => {
+	const services = [
+		{
+			icon: Users,
+			title: "Corretores Especialistas",
+			description:
+				"Nossos corretores experientes oferecem atendimento personalizado e expertise de mercado",
+		},
+		{
+			icon: TrendingUp,
+			title: "Análise de Mercado",
+			description:
+				"Obtenha insights detalhados do mercado e avaliações de propriedades de nossos especialistas",
+		},
+		{
+			icon: Shield,
+			title: "Transações Seguras",
+			description:
+				"Garantimos que todas as transações sejam seguras e legalmente compatíveis",
+		},
+		{
+			icon: Award,
+			title: "Premiada",
+			description:
+				"Reconhecida como a melhor imobiliária da região por 5 anos consecutivos",
+		},
+	];
+
 	return (
 		<section className="py-16 lg:py-24">
 			<div className="container mx-auto px-4 lg:px-6">
@@ -17,34 +44,9 @@ export const ServicesSection: React.FC = () => {
 				</div>
 
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-					{[
-						{
-							icon: Users,
-							title: "Corretores Especialistas",
-							description:
-								"Nossos corretores experientes oferecem atendimento personalizado e expertise de mercado",
-						},
-						{
-							icon: TrendingUp,
-							title: "Análise de Mercado",
-							description:
-								"Obtenha insights detalhados do mercado e avaliações de propriedades de nossos especialistas",
-						},
-						{
-							icon: Shield,
-							title: "Transações Seguras",
-							description:
-								"Garantimos que todas as transações sejam seguras e legalmente compatíveis",
-						},
-						{
-							icon: Award,
-							title: "Premiada",
-							description:
-								"Reconhecida como a melhor imobiliária da região por 5 anos consecutivos",
-						},
-					].map((service, index) => (
+					{services.map((service) => (
 						<Card
-							key={index}
+							key={service.title}
 							className="text-center p-6 hover:shadow-lg transition-shadow"
 						>
 							<CardContent className="pt-6">

@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useId, useState } from "react";
 import Layout from "@/components/Layout";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -231,7 +231,7 @@ export default function ImoveisPage() {
 												<div className="flex items-center space-x-2">
 													<Checkbox
 														checked={true}
-														id="venda"
+														id={useId()}
 														label=""
 														onChange={() => console.log("Venda selected")}
 													/>
@@ -242,7 +242,7 @@ export default function ImoveisPage() {
 												<div className="flex items-center space-x-2">
 													<Checkbox
 														checked={false}
-														id="aluguel"
+														id={useId()}
 														label=""
 														onChange={() => console.log("Aluguel selected")}
 													/>
@@ -406,8 +406,11 @@ export default function ImoveisPage() {
 														{property.price}
 													</h3>
 													<div className="flex text-yellow-400">
-														{[...Array(5)].map((_, i) => (
-															<Star key={i} className="h-4 w-4 fill-current" />
+														{[...Array(5)].map((_, _i) => (
+															<Star
+																key={property.id}
+																className="h-4 w-4 fill-current"
+															/>
 														))}
 													</div>
 												</div>

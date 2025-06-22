@@ -146,8 +146,8 @@ export default function VenderPage() {
 								{ number: "18", label: "Dias Médios p/ Venda", icon: "⏱️" },
 								{ number: "98%", label: "Satisfação dos Clientes", icon: "⭐" },
 								{ number: "15%", label: "Acima da Tabela FIPE", icon: "📈" },
-							].map((stat, index) => (
-								<div key={index} className="group">
+							].map((stat) => (
+								<div key={stat.label} className="group">
 									<div className="text-4xl mb-2">{stat.icon}</div>
 									<div className="text-3xl md:text-4xl font-bold text-green-600 mb-2 group-hover:scale-110 transition-transform duration-200">
 										{stat.number}
@@ -173,9 +173,9 @@ export default function VenderPage() {
 						</div>
 
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-							{steps.map((step, index) => (
+							{steps.map((step) => (
 								<Card
-									key={index}
+									key={step.number}
 									className="relative p-6 hover:shadow-lg transition-shadow"
 								>
 									<CardContent className="pt-6">
@@ -217,8 +217,8 @@ export default function VenderPage() {
 									mercado.
 								</p>
 								<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-									{benefits.map((benefit, index) => (
-										<div key={index} className="flex items-center">
+									{benefits.map((benefit) => (
+										<div key={benefit} className="flex items-center">
 											<CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
 											<span className="text-gray-700 text-sm">{benefit}</span>
 										</div>
@@ -249,15 +249,18 @@ export default function VenderPage() {
 						</div>
 
 						<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-							{testimonials.map((testimonial, index) => (
+							{testimonials.map((testimonial) => (
 								<Card
-									key={index}
+									key={testimonial.name}
 									className="p-8 hover:shadow-xl transition-shadow duration-300"
 								>
 									<CardContent className="p-0">
 										<div className="flex text-yellow-400 mb-4">
-											{[...Array(testimonial.rating)].map((_, i) => (
-												<Star key={i} className="h-5 w-5 fill-current" />
+											{[...Array(testimonial.rating)].map((_, _i) => (
+												<Star
+													key={testimonial.rating}
+													className="h-5 w-5 fill-current"
+												/>
 											))}
 										</div>
 										<blockquote className="text-gray-700 mb-6 text-lg leading-relaxed">

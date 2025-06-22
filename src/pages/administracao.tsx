@@ -160,8 +160,8 @@ export default function AdministracaoPage() {
 				<section className="py-16 bg-white">
 					<div className="container mx-auto px-4 lg:px-6">
 						<div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-							{stats.map((stat, index) => (
-								<div key={index} className="group">
+							{stats.map((stat) => (
+								<div key={stat.label} className="group">
 									<div className="text-4xl mb-2">{stat.icon}</div>
 									<div className="text-3xl md:text-4xl font-bold text-indigo-600 mb-2 group-hover:scale-110 transition-transform duration-200">
 										{stat.number}
@@ -187,9 +187,9 @@ export default function AdministracaoPage() {
 						</div>
 
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-							{services.map((service, index) => (
+							{services.map((service) => (
 								<Card
-									key={index}
+									key={service.title}
 									className="p-6 hover:shadow-lg transition-shadow"
 								>
 									<CardContent className="pt-6">
@@ -199,9 +199,9 @@ export default function AdministracaoPage() {
 										</h3>
 										<p className="text-gray-600 mb-4">{service.description}</p>
 										<ul className="space-y-2">
-											{service.features.map((feature, idx) => (
+											{service.features.map((feature) => (
 												<li
-													key={idx}
+													key={feature}
 													className="flex items-center text-sm text-gray-600"
 												>
 													<CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
@@ -229,8 +229,8 @@ export default function AdministracaoPage() {
 									transparente e econômica para seu condomínio.
 								</p>
 								<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-									{benefits.map((benefit, index) => (
-										<div key={index} className="flex items-center">
+									{benefits.map((benefit) => (
+										<div key={benefit} className="flex items-center">
 											<CheckCircle className="h-5 w-5 text-indigo-500 mr-3 flex-shrink-0" />
 											<span className="text-gray-700 text-sm">{benefit}</span>
 										</div>
@@ -295,9 +295,9 @@ export default function AdministracaoPage() {
 									description: "Dashboards em tempo real com indicadores",
 									icon: "📊",
 								},
-							].map((tech, index) => (
+							].map((tech) => (
 								<Card
-									key={index}
+									key={tech.title}
 									className="text-center p-6 hover:shadow-lg transition-shadow"
 								>
 									<CardContent className="pt-6">
@@ -347,8 +347,8 @@ export default function AdministracaoPage() {
 									title: "Gestão",
 									description: "Início da administração profissional",
 								},
-							].map((item, index) => (
-								<div key={index} className="text-center">
+							].map((item) => (
+								<div key={item.step} className="text-center">
 									<div className="bg-indigo-600 text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-xl mx-auto mb-4">
 										{item.step}
 									</div>

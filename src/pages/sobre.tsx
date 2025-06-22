@@ -87,8 +87,8 @@ export default function SobrePage() {
 				<section className="py-16 bg-white">
 					<div className="container mx-auto px-4 lg:px-6">
 						<div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-							{stats.map((stat, index) => (
-								<div key={index} className="group">
+							{stats.map((stat) => (
+								<div key={stat.label} className="group">
 									<div className="text-4xl mb-2">{stat.icon}</div>
 									<div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2 group-hover:scale-110 transition-transform duration-200">
 										{stat.number}
@@ -159,9 +159,9 @@ export default function SobrePage() {
 						</div>
 
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-							{values.map((value, index) => (
+							{values.map((value) => (
 								<Card
-									key={index}
+									key={value.title}
 									className="text-center p-6 hover:shadow-lg transition-shadow"
 								>
 									<CardContent className="pt-6">
@@ -192,8 +192,8 @@ export default function SobrePage() {
 
 						<div className="max-w-4xl mx-auto">
 							<div className="space-y-8">
-								{timeline.map((item, index) => (
-									<div key={index} className="flex items-start">
+								{timeline.map((item) => (
+									<div key={item.year} className="flex items-start">
 										<div className="flex-shrink-0 w-24 text-right mr-8">
 											<Badge className="bg-blue-600 text-white px-3 py-1 text-sm font-bold">
 												{item.year}
@@ -235,8 +235,8 @@ export default function SobrePage() {
 										"Rede de parceiros confiáveis (bancos, cartórios, etc.)",
 										"Suporte completo do início ao fim da transação",
 										"Pós-venda dedicado para garantir sua satisfação",
-									].map((item, index) => (
-										<div key={index} className="flex items-center">
+									].map((item) => (
+										<div key={item} className="flex items-center">
 											<CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
 											<span className="text-gray-700">{item}</span>
 										</div>

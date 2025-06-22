@@ -192,9 +192,9 @@ export default function CarreirasPage() {
 						</div>
 
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-							{benefits.map((benefit, index) => (
+							{benefits.map((benefit) => (
 								<Card
-									key={index}
+									key={benefit.title}
 									className="text-center p-6 hover:shadow-lg transition-shadow"
 								>
 									<CardContent className="pt-6">
@@ -223,9 +223,9 @@ export default function CarreirasPage() {
 						</div>
 
 						<div className="space-y-6">
-							{openPositions.map((position, index) => (
+							{openPositions.map((position) => (
 								<Card
-									key={index}
+									key={position.title}
 									className="p-6 hover:shadow-lg transition-shadow"
 								>
 									<CardContent className="p-0">
@@ -255,9 +255,9 @@ export default function CarreirasPage() {
 										<div className="mb-4">
 											<h4 className="font-semibold mb-2">Requisitos:</h4>
 											<ul className="space-y-1">
-												{position.requirements.map((req, idx) => (
+												{position.requirements.map((req) => (
 													<li
-														key={idx}
+														key={req}
 														className="flex items-center text-sm text-gray-600"
 													>
 														<CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
@@ -312,8 +312,11 @@ export default function CarreirasPage() {
 												<SelectValue value="" placeholder="Vaga de interesse" />
 											</SelectTrigger>
 											<SelectContent value="vaga" onChange={() => {}}>
-												{openPositions.map((position, index) => (
-													<SelectItem key={index} value={position.title}>
+												{openPositions.map((position) => (
+													<SelectItem
+														key={position.title}
+														value={position.title}
+													>
 														{position.title}
 													</SelectItem>
 												))}
@@ -374,8 +377,8 @@ export default function CarreirasPage() {
 										"Programa de mentoria",
 										"Feedback constante",
 										"Oportunidades de crescimento",
-									].map((item, index) => (
-										<div key={index} className="flex items-center">
+									].map((item) => (
+										<div key={item} className="flex items-center">
 											<CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
 											<span className="text-gray-700">{item}</span>
 										</div>

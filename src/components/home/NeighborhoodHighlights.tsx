@@ -1,7 +1,32 @@
 import Image from "next/image";
 import { Badge } from "../ui/badge";
 import { Card, CardContent } from "../ui/card";
+
 export function NeighborhoodHighlights() {
+	const neighborhoods = [
+		{
+			name: "Jardins",
+			properties: "245 Imóveis",
+			avgPrice: "R$ 2.5M",
+			image: "/placeholder.svg?height=300&width=400",
+			features: ["Shopping de Luxo", "Melhores Escolas", "Área Nobre"],
+		},
+		{
+			name: "Vila Madalena",
+			properties: "892 Imóveis",
+			avgPrice: "R$ 1.8M",
+			image: "/placeholder.svg?height=300&width=400",
+			features: ["Vida Noturna", "Arte e Cultura", "Gastronomia"],
+		},
+		{
+			name: "Moema",
+			properties: "156 Imóveis",
+			avgPrice: "R$ 1.2M",
+			image: "/placeholder.svg?height=300&width=400",
+			features: ["Parques", "Comércio Local", "Transporte"],
+		},
+	];
+
 	return (
 		<section className="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-blue-50">
 			<div className="container mx-auto px-4 lg:px-6">
@@ -19,31 +44,9 @@ export function NeighborhoodHighlights() {
 				</div>
 
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-					{[
-						{
-							name: "Jardins",
-							properties: "245 Imóveis",
-							avgPrice: "R$ 2.5M",
-							image: "/placeholder.svg?height=300&width=400",
-							features: ["Shopping de Luxo", "Melhores Escolas", "Área Nobre"],
-						},
-						{
-							name: "Vila Madalena",
-							properties: "892 Imóveis",
-							avgPrice: "R$ 1.8M",
-							image: "/placeholder.svg?height=300&width=400",
-							features: ["Vida Noturna", "Arte e Cultura", "Gastronomia"],
-						},
-						{
-							name: "Moema",
-							properties: "156 Imóveis",
-							avgPrice: "R$ 1.2M",
-							image: "/placeholder.svg?height=300&width=400",
-							features: ["Parques", "Comércio Local", "Transporte"],
-						},
-					].map((neighborhood, index) => (
+					{neighborhoods.map((neighborhood) => (
 						<Card
-							key={index}
+							key={neighborhood.name}
 							className="overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer border-0 shadow-lg"
 						>
 							<div className="relative overflow-hidden">

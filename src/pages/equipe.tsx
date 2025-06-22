@@ -145,8 +145,8 @@ export default function EquipePage() {
 								},
 								{ number: "2.847", label: "Imóveis Vendidos", icon: "🏠" },
 								{ number: "99%", label: "Satisfação dos Clientes", icon: "⭐" },
-							].map((stat, index) => (
-								<div key={index} className="group">
+							].map((stat) => (
+								<div key={stat.label} className="group">
 									<div className="text-4xl mb-2">{stat.icon}</div>
 									<div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2 group-hover:scale-110 transition-transform duration-200">
 										{stat.number}
@@ -172,9 +172,9 @@ export default function EquipePage() {
 						</div>
 
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-							{departments.map((dept, index) => (
+							{departments.map((dept) => (
 								<Card
-									key={index}
+									key={dept.name}
 									className="text-center p-6 hover:shadow-lg transition-shadow"
 								>
 									<CardContent className="pt-6">
@@ -204,9 +204,9 @@ export default function EquipePage() {
 						</div>
 
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-							{teamMembers.map((member, index) => (
+							{teamMembers.map((member) => (
 								<Card
-									key={index}
+									key={member.name}
 									className="overflow-hidden hover:shadow-xl transition-all duration-300 group"
 								>
 									<div className="relative">
@@ -228,8 +228,11 @@ export default function EquipePage() {
 												{member.name}
 											</h3>
 											<div className="flex text-yellow-400">
-												{[...Array(5)].map((_, i) => (
-													<Star key={i} className="h-4 w-4 fill-current" />
+												{[...Array(5)].map((_) => (
+													<Star
+														key={member.name}
+														className="h-4 w-4 fill-current"
+													/>
 												))}
 											</div>
 										</div>

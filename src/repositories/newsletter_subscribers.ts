@@ -1,7 +1,7 @@
 import { supabase } from "@/lib/supabase";
 
 export const isExistingEmail = async (email: string) => {
-	const { data: existingEmail, error } = await supabase
+	const { data: existingEmail } = await supabase
 		.from("newsletter_subscribers")
 		.select("email")
 		.eq("email", email)

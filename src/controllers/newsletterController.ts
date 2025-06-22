@@ -64,7 +64,7 @@ export async function sendNewsletterHandler(
 	if (!parsed.success)
 		return res.status(400).json({ error: parsed.error.format() });
 
-	const { subject, content } = parsed.data;
+	const { subject } = parsed.data;
 	const { data: subscribers } = await newsletterRepository.getAllSubscribers();
 
 	if (!subscribers || subscribers.length === 0) {

@@ -161,9 +161,9 @@ export default function ComprarPage() {
 						</div>
 
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-							{steps.map((step, index) => (
+							{steps.map((step) => (
 								<Card
-									key={index}
+									key={step.title}
 									className="relative p-6 hover:shadow-lg transition-shadow"
 								>
 									<CardContent className="pt-6">
@@ -195,8 +195,8 @@ export default function ComprarPage() {
 									você encontre o imóvel ideal com segurança e tranquilidade.
 								</p>
 								<div className="space-y-4">
-									{benefits.map((benefit, index) => (
-										<div key={index} className="flex items-center">
+									{benefits.map((benefit) => (
+										<div key={benefit} className="flex items-center">
 											<CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
 											<span className="text-gray-700">{benefit}</span>
 										</div>
@@ -235,9 +235,9 @@ export default function ComprarPage() {
 						</div>
 
 						<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-							{services.map((service, index) => (
+							{services.map((service) => (
 								<Card
-									key={index}
+									key={service.title}
 									className="text-center p-8 hover:shadow-lg transition-shadow"
 								>
 									<CardContent className="pt-6">

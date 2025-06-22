@@ -9,14 +9,7 @@ type Props = {
 	dataTestid?: string;
 };
 
-const Checkbox = ({
-	label,
-	checked,
-	onChange,
-	className,
-	id,
-	dataTestid,
-}: Props) => {
+const Checkbox = ({ label, checked, onChange, id, dataTestid }: Props) => {
 	return (
 		<label
 			htmlFor={id}

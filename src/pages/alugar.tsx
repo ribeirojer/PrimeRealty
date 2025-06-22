@@ -161,8 +161,8 @@ export default function AlugarPage() {
 									novo lar sem os compromissos de longo prazo da compra.
 								</p>
 								<div className="space-y-4">
-									{benefits.map((benefit, index) => (
-										<div key={index} className="flex items-center">
+									{benefits.map((benefit) => (
+										<div key={benefit} className="flex items-center">
 											<CheckCircle className="h-5 w-5 text-purple-500 mr-3 flex-shrink-0" />
 											<span className="text-gray-700">{benefit}</span>
 										</div>
@@ -205,9 +205,9 @@ export default function AlugarPage() {
 						</div>
 
 						<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-							{services.map((service, index) => (
+							{services.map((service) => (
 								<Card
-									key={index}
+									key={service.title}
 									className="text-center p-8 hover:shadow-lg transition-shadow"
 								>
 									<CardContent className="pt-6">
@@ -343,8 +343,8 @@ export default function AlugarPage() {
 									title: "Assine",
 									description: "Assinatura do contrato e entrega das chaves",
 								},
-							].map((item, index) => (
-								<div key={index} className="text-center">
+							].map((item) => (
+								<div key={item.step} className="text-center">
 									<div className="bg-purple-600 text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-xl mx-auto mb-4">
 										{item.step}
 									</div>
